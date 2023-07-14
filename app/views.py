@@ -11,6 +11,8 @@ def insert_topic(request):
         if TMFOD.is_valid():
             TMFOD.save()
             return HttpResponse('topic data is inserted')
+        else:
+            return HttpResponse('topic data is not valid')
     return render(request,'insert_topic.html',d)
 
 def insert_webpage(request):
@@ -21,6 +23,8 @@ def insert_webpage(request):
         if WMFOD.is_valid():
             WMFOD.save()
             return HttpResponse('webpage data is inserted')
+        else:
+            return HttpResponse('webpage data is not valid')
     return render(request,'insert_webpage.html',d)
 
 def insert_accessrecord(request):
@@ -31,4 +35,6 @@ def insert_accessrecord(request):
         if ARMFOD.is_valid():
             ARMFOD.save()
             return HttpResponse('accessrecord data is inserted')
+        else:
+            return HttpResponse('accessrecord data is not valid')
     return render(request,'insert_accessrecord.html',d)
